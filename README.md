@@ -15,3 +15,6 @@
 4. copy post-merge to post-checkout
     - cp post-merge post-checkout
     - change echo parameter post-merge
+
+## **required sudo user**
+>after pull or checkout if your user in not root terminal will prompt you for entering a password.
