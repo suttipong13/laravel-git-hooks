@@ -1,0 +1,41 @@
+#!/bin/bash
+
+OWNER_NAME="kuhome"
+OWNER="${OWNER}:www-data"
+
+PROJECT_NAME="kuhome"
+FOLDER_NAME_1="/var/www/${PROJECT_NAME}/storage"
+FOLDER_NAME_2="/var/www/${PROJECT_NAME}/bootstrap/cache"
+
+echo
+echo "Git post-merge script"
+echo "change ownership to ${OWNER} on ${FOLDER_NAME_1} "
+sudo chown -R $OWNER $FOLDER_NAME_1
+
+echo "change permission ${FOLDER_NAME_1} to 775"
+sudo chmod 775 -R $FOLDER_NAME_1
+
+echo "chage ownership to ${OWNER} on ${FOLDER_NAME_2} "
+sudo chown -R $OWNER $FOLDER_NAME_2
+
+echo "change permission ${FOLDER_NAME_2} to 775"
+sudo chmod 775 -R $FOLDER_NAME_2
+
+echo "clear cache"
+php artisan view:clear
+php artisan route:clear
+php artisan config:clear
+php artisan event:clear
+php artisan cache:clear
+
+echo "cache project"
+php artisan route:cache
+php artisan config:cache
+php artisan view:cache
+php artisan event:cache
+
+echo "reset nginx"
+
+sudo service nginx restart
+
+echo "--- DONE ----"
