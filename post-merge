@@ -1,9 +1,9 @@
 #!/bin/bash
 
-OWNER_NAME="kuhome"
+OWNER_NAME=""
 OWNER="${OWNER}:www-data"
 
-PROJECT_NAME="kuhome"
+PROJECT_NAME=""
 FOLDER_NAME_1="/var/www/${PROJECT_NAME}/storage"
 FOLDER_NAME_2="/var/www/${PROJECT_NAME}/bootstrap/cache"
 
