@@ -14,3 +14,4 @@
 3. open post-merge file and edit OWNER and PROJECT_NAME variable 
 4. copy post-merge to post-checkout
     - cp post-merge post-checkout
+    - change echo parameter post-merge
