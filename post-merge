@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OWNER_NAME=""
-OWNER="${OWNER}:www-data"
+OWNER="${OWNER_NAME}:www-data"
 
 PROJECT_NAME=""
 FOLDER_NAME_1="/var/www/${PROJECT_NAME}/storage"
